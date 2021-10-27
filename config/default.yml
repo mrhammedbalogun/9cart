@@ -1,0 +1,3 @@
+apiConfig:
+  Client-ID: ${Client-ID}
+  Client-Secret: ${Client-Secret}
