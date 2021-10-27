@@ -66,7 +66,12 @@ const ConfirmStatement: React.FunctionComponent = () => {
           setPassword('');
           formValue.ticketNo = '';
           formValue.password = '';
-          Alert.success('Your Statement has been confirmed', 4000);
+          Alert.success('Congratulations, ticket successfully submitted. We will review your profile and get intouch with you', 10000);
+
+          setTimeout(() => {
+            router.push('/')
+          }, 11000);
+
         } else {
           throw new Error(
             body.message
@@ -76,12 +81,12 @@ const ConfirmStatement: React.FunctionComponent = () => {
         let msg;
 
         if(error && (error.message === 'PDF file not found') ) {
-            msg = error.message  + '\n Please submit your ticket again in to regenerate!'
+            msg =  'Sorry! The ticket could not submit. Kindly click on the submit button again, to re-submit the ticket. Thanks.'
         } else {
             msg = error.message
         }
 
-        Alert.error(msg, 4000);
+        Alert.error(msg, 30000);
         setIsFormSubmitted(false);
       }
     }
